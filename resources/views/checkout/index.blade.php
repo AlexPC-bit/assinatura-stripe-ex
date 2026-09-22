@@ -4,6 +4,10 @@
     </x-slot>
 
     <div class="py-6 max-w-2xl mx-auto space-y-4">
+        @if(session('warning'))
+            <div class="bg-yellow-100 text-yellow-800 p-3 rounded">{{ session('warning') }}</div>
+        @endif
+
         @foreach($plans as $plan)
             <div class="bg-white shadow rounded p-6 flex justify-between items-center">
                 <div>
