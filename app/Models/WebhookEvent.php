@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class WebhookEvent extends Model
 {
-    //
+    protected $fillable = ['stripe_event_id', 'type'];
 }
