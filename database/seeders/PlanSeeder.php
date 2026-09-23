@@ -10,14 +10,14 @@ class PlanSeeder extends Seeder
 {
     public function run(): void
     {
-        Plan::create([
+        Plan::firstOrCreate([
             'name' => 'Plano Básico',
             'stripe_price_id' => 'price_1UHJEUJiJeZBmdShz5OyXnCz', 
             'price' => 29.90,
             'interval' => 'month',
         ]);
 
-        Plan::create([
+        Plan::firstOrCreate([
             'name' => 'Plano Pro',
             'stripe_price_id' => 'price_1UHJEtJiJeZBmdShyKavICT7', 
             'price' => 59.90,
