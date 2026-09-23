@@ -12,12 +12,13 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-    $middleware->alias([
-        'subscribed' => \App\Http\Middleware\EnsureUserIsSubscribed::class,
-    ]);
-    $middleware->validateCsrfTokens(except: [
-        'stripe/webhook',
-    ]);
+        $middleware->trustProxies(at: '*');
+        $middleware->alias([
+            'subscribed' => \App\Http\Middleware\EnsureUserIsSubscribed::class,
+        ]);
+        $middleware->validateCsrfTokens(except: [
+            'stripe/webhook',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
