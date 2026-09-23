@@ -23,4 +23,4 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "php artisan migrate --force && php artisan serve --host 0.0.0.0 --port ${PORT:-8080}"]
+CMD ["sh", "-c", "echo DATABASE_URL_DEBUG=$DATABASE_URL && php artisan migrate --force && php artisan serve --host 0.0.0.0 --port ${PORT:-8080}"]
