@@ -2,9 +2,7 @@ FROM node:20-alpine AS assets
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
-COPY resources ./resources
-COPY vite.config.js ./
-COPY public ./public
+COPY . .
 RUN npm run build
 
 FROM php:8.4-cli
