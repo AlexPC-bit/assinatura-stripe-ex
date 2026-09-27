@@ -8,7 +8,7 @@ Depois de um tempo afastado do mercado, decidi reconstruir meu portfólio com pr
 
 ## Decisão sem Cashier, na mão
 
-O Laravel tem um pacote oficial (Cashier) que abstrai praticamente toda a integração com Stripe. Decidi **não usar ele** — usei o SDK puro (`stripe/stripe-php`) e construí o fluxo de checkout e webhook manualmente.
+O Laravel tem um pacote oficial (Cashier) que abstrai praticamente toda a integração com Stripe. Decidi não usar ele, usei o SDK puro e construí o fluxo de checkout e webhook manualmente.
 
 O motivo: eu queria explicar cada peça do processo, não só "funcionar". Fazendo na mão.
 
